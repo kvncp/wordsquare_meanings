@@ -51,14 +51,14 @@ def main():
     my_tweets = get_tweets(me)
     their_tweets = get_tweets(them)
 
-    wordsquare_tweets_by_id = {x.id: x for x in wordsquare_tweets}
+    their_tweets_by_id = {x.id: x for x in their_tweets}
     previous_tweets = set(x.in_reply_to_status_id for x in my_tweets
         if x.in_reply_to_status_id is not None)
 
-    new_tweets = set(wordsquare_tweets_by_id.keys()) - previous_tweets
+    new_tweets = set(their_tweets_by_id.keys()) - previous_tweets
 
     for tweet in sorted(new_tweets):
-        text = wordsquare_tweets_by_id[tweet].text
+        text = their_tweets_by_id[tweet].text
         image_meta = webdriver.load_image_info(text, 5)
 
         for image in image_meta:
