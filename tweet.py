@@ -64,6 +64,7 @@ def main():
         for image in image_meta:
             if image.get(SUMMARY):
                 image_name = os.path.join(download_path, os.path.basename(image.get(IMAGE)))
+                image_name = image_name.split('?')[0]
                 webdriver.download_image(image.get(IMAGE), image_name)
 
                 send_tweet(image_name, image.get(SUMMARY), them, tweet)
