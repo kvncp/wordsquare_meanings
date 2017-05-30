@@ -19,6 +19,7 @@ Next, install the dependencies needed for this program.
 sudo apt-get install python-pip
 pip install selenium
 pip install requests
+pip install tweepy
 ```
 
 The final thing that is needed is the [driver](https://sites.google.com/a/chromium.org/chromedriver/) Selenium will use to connect to Chrome. This code assumes that the driver is located in the current directory, but as long as it is on your PATH, things should work.
